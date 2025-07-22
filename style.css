@@ -44,32 +44,22 @@ body {
 }
 
 /* FOTO DE PERFIL */
-.foto-perfil {
+.container-foto {
   width: 140px;
   height: 140px;
   border-radius: 50%;
   border: 5px solid var(--rosa-escuro);
   box-shadow: 0 4px 15px var(--sombra);
-  margin: 0 auto 1.5rem;
-  display: block;
   overflow: hidden;
-  position: relative;
+  margin: 0 auto 1.5rem;
 }
 
-.foto-perfil::after {
-  content: "";
-  display: block;
-  padding-top: 100%; /* mantém proporção circular */
-}
-
-.foto-perfil img {
-  position: absolute;
-  top: -20px; /* sobe a imagem */
-  left: 50%;
-  transform: translateX(-50%) scale(1.3); /* centraliza e dá zoom */
-  width: auto;
+.foto-perfil {
+  width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 10%; /* sobe a imagem */
+  display: block;
 }
 
 .foto-perfil:hover {
