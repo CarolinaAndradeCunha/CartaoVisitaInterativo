@@ -48,6 +48,7 @@ body {
   width: 140px;
   height: 140px;
   object-fit: cover;
+  object-position: center top; /* ou ajuste conforme necessário */
   border-radius: 50%;
   border: 5px solid var(--rosa-escuro);
   box-shadow: 0 4px 15px var(--sombra);
