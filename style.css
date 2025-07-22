@@ -17,7 +17,7 @@
 }
 
 body {
-    background-image:url('./assets/fundo.jpg');
+  background-image: url('./assets/fundo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@ body {
   padding: 2rem;
 }
 
-/* ===== CARTÃO ===== */
+/* ===== CARTÃO - VERTICAL (MOBILE) ===== */
 .cartao {
   background: rgba(255, 255, 255, 0.95);
   border-radius: 20px;
@@ -41,6 +41,9 @@ body {
   width: 100%;
   padding: 2.5rem 2rem 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* FOTO DE PERFIL */
@@ -52,6 +55,7 @@ body {
   box-shadow: 0 4px 15px var(--sombra);
   overflow: hidden;
   margin: 0 auto 1.5rem;
+  flex-shrink: 0;
 }
 
 .foto-perfil {
@@ -59,10 +63,18 @@ body {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.3s ease;
 }
 
 .foto-perfil:hover {
   transform: scale(1.05);
+}
+
+/* CONTEÚDO À DIREITA NO DESKTOP */
+.conteudo-texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* NOME */
@@ -84,7 +96,7 @@ body {
 }
 
 /* FRASE IMPACTO */
-.cartao > p.impacto {
+.cartao > .conteudo-texto > .impacto {
   font-size: 1rem;
   color: var(--rosa-escuro);
   font-weight: 500;
@@ -97,22 +109,20 @@ body {
 .lista-servicos {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1rem 3rem; /* espaço entre linhas e colunas */
-  max-width: 300px; /* ajusta conforme seu cartão */
+  gap: 1rem 3rem;
+  max-width: 300px;
   margin: 0 auto;
   padding-left: 0;
   list-style: none;
 }
 
 .lista-servicos li {
-  list-style: none; /* remove marcador */
   text-align: left;
   font-weight: 600;
   color: var(--rosa-escuro);
   font-size: 1.1rem;
   user-select: none;
   cursor: default;
-  padding-left: 0;
   margin-bottom: 0.4rem;
 }
 
@@ -157,9 +167,12 @@ footer {
   padding-top: 0.8rem;
   line-height: 1.3;
   user-select: none;
+  margin-top: 1rem;
 }
 
-/* RESPONSIVO */
+/* ===== RESPONSIVO ===== */
+
+/* MOBILE ajustes finos */
 @media (max-width: 450px) {
   .lista-servicos {
     max-width: 100%;
@@ -177,7 +190,7 @@ footer {
     max-width: 100%;
     padding: 2rem 1.5rem 1rem;
   }
-  
+
   .foto-perfil {
     width: 120px;
     height: 120px;
@@ -191,5 +204,39 @@ footer {
     width: 44px;
     height: 44px;
     font-size: 1.3rem;
+  }
+}
+
+/* DESKTOP: layout horizontal */
+@media (min-width: 800px) {
+  .cartao {
+    max-width: 900px;
+    width: 100%;
+    flex-direction: row;
+    padding: 3rem 3rem;
+    text-align: left;
+    gap: 3rem;
+  }
+
+  .container-foto {
+    margin: 0;
+  }
+
+  .conteudo-texto {
+    align-items: flex-start;
+    justify-content: center;
+    flex: 1;
+  }
+
+  .lista-servicos {
+    margin-left: 0;
+  }
+
+  .contato {
+    justify-content: flex-start;
+  }
+
+  footer {
+    text-align: left;
   }
 }
