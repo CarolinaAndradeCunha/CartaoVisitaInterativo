@@ -52,15 +52,12 @@ body {
   box-shadow: 0 4px 15px var(--sombra);
   overflow: hidden;
   margin: 0 auto 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .foto-perfil {
+  width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 10%; /* sobe o rosto */
   display: block;
 }
 
