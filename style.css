@@ -9,52 +9,41 @@
   --borda: #ddd;
 }
 
-/* ===== RESET ===== */
+/* ===== RESET E GERAIS ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
-  background-image: url('./assets/fundo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--preto);
-  line-height: 1.6;
-  min-height: 100vh;
+  background-color: #fff0f5;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
+  min-height: 100vh;
+  padding: 1rem;
 }
 
-/* ===== CARTÃO - VERTICAL (MOBILE) ===== */
+/* ===== CARTÃO CONTAINER ===== */
 .cartao {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 20px;
-  box-shadow: 0 10px 30px var(--sombra);
-  max-width: 350px;
-  width: 100%;
-  padding: 2.5rem 2rem 1.5rem;
-  text-align: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  background-color: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 600px;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
 }
 
-/* FOTO DE PERFIL */
+/* ===== FOTO DE PERFIL ===== */
 .container-foto {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 5px solid var(--rosa-escuro);
-  box-shadow: 0 4px 15px var(--sombra);
+  width: 100%;
+  height: 280px;
   overflow: hidden;
-  margin: 0 auto 1.5rem;
   flex-shrink: 0;
 }
 
@@ -62,174 +51,102 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
-  transition: transform 0.3s ease;
 }
 
-.foto-perfil:hover {
-  transform: scale(1.05);
-}
-
-/* CONTEÚDO À DIREITA NO DESKTOP */
+/* ===== CONTEÚDO DE TEXTO ===== */
 .conteudo-texto {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
 }
 
-/* NOME */
-.cartao h1 {
-  font-size: 2.4rem;
-  color: var(--rosa-escuro);
-  margin-bottom: 0.2rem;
-  font-weight: 700;
-  font-family: 'Segoe UI Black', 'Segoe UI Bold', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.conteudo-texto h1 {
+  font-size: 2rem;
+  color: #d63384;
+  margin-bottom: 0.3rem;
 }
 
-/* SUBTÍTULO */
 .subtitulo {
-  font-size: 1.1rem;
-  color: var(--rosa-claro);
-  font-weight: 600;
-  margin-bottom: 1.2rem;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.impacto {
   font-style: italic;
+  margin-bottom: 1.5rem;
+  color: #888;
 }
 
-/* FRASE IMPACTO */
-.cartao > .conteudo-texto > .impacto {
-  font-size: 1rem;
-  color: var(--rosa-escuro);
-  font-weight: 500;
-  margin-bottom: 2rem;
-  font-style: normal;
-  letter-spacing: 0.05em;
-}
-
-/* LISTA DE SERVIÇOS */
+/* ===== SERVIÇOS ===== */
 .lista-servicos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem 3rem;
-  max-width: 300px;
-  margin: 0 auto;
-  padding-left: 0;
   list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding: 0;
 }
 
 .lista-servicos li {
-  text-align: left;
-  font-weight: 600;
-  color: var(--rosa-escuro);
-  font-size: 1.1rem;
-  user-select: none;
-  cursor: default;
-  margin-bottom: 0.4rem;
+  background-color: #ffe6f0;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: #c2185b;
 }
 
-/* CONTATOS - BOTÕES REDONDOS */
+/* ===== CONTATO ===== */
 .contato {
   display: flex;
   justify-content: center;
-  gap: 1.3rem;
-  margin-top: 3rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
+  gap: 1.2rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .contato a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--rosa-escuro);
-  color: white;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 10px var(--sombra);
-  transition: background 0.3s ease, transform 0.3s ease;
-  text-decoration: none;
+  color: #c2185b;
+  transition: transform 0.2s;
 }
 
 .contato a:hover {
-  background: var(--rosa-claro);
-  color: var(--rosa-escuro);
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 footer {
-  font-size: 0.85rem;
-  color: var(--rosa-claro);
-  font-style: italic;
-  text-align: center;
-  border-top: 1px solid var(--borda);
-  padding-top: 0.8rem;
-  line-height: 1.3;
-  user-select: none;
+  font-size: 0.9rem;
+  color: #666;
   margin-top: 1rem;
 }
 
-/* ===== RESPONSIVO ===== */
-
-/* MOBILE ajustes finos */
-@media (max-width: 450px) {
-  .lista-servicos {
-    max-width: 100%;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.8rem 1.5rem;
-  }
-
-  .lista-servicos li {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 400px) {
+/* ===== DESKTOP: CARTÃO HORIZONTAL ===== */
+@media screen and (min-width: 768px) {
   .cartao {
-    max-width: 100%;
-    padding: 2rem 1.5rem 1rem;
-  }
-
-  .foto-perfil {
-    width: 120px;
-    height: 120px;
-  }
-
-  .cartao h1 {
-    font-size: 2rem;
-  }
-
-  .contato a {
-    width: 44px;
-    height: 44px;
-    font-size: 1.3rem;
-  }
-}
-
-/* DESKTOP: layout horizontal */
-@media (min-width: 800px) {
-  .cartao {
-    max-width: 900px;
-    width: 100%;
     flex-direction: row;
-    padding: 3rem 3rem;
-    text-align: left;
-    gap: 3rem;
+    max-width: 900px;
+    height: 380px;
   }
 
   .container-foto {
-    margin: 0;
+    width: 50%;
+    height: 100%;
+  }
+
+  .foto-perfil {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .conteudo-texto {
-    align-items: flex-start;
+    width: 50%;
+    padding: 2rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    flex: 1;
-  }
-
-  .lista-servicos {
-    margin-left: 0;
   }
 
   .contato {
@@ -240,3 +157,4 @@ footer {
     text-align: left;
   }
 }
+
